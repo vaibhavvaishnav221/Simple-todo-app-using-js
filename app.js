@@ -60,7 +60,7 @@ while (true) {
     }
 
     else {
-        req = prompt("Enter a valid request");
+        req = prompt("Enter a valid request: ");
     }
 
     req = prompt("Enter request again: ");
