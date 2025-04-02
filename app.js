@@ -67,4 +67,5 @@ while (true) {
     req = prompt("Enter request again: ");
 }
 
+console.log("Todo List: ");
 traversingTodo();
