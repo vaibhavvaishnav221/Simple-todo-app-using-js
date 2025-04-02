@@ -12,18 +12,18 @@ let req = prompt(`Enter your request - "list", "add", "delete", "read": `);
 
 while (true) {
 
-    if (req == "quit") {
+    if (req == "quit") {                 // To Quit the Application
         alert("You requested to quit the application");
         break;
     }
 
-    else if (req == "list") {
+    else if (req == "list") {           // Read Operation
         console.log(`************************************`);
         traversingTodo();
         console.log(`************************************`);
     }
 
-    else if (req == "add") {
+    else if (req == "add") {            // Create Operation
         let newTask = prompt("Enter the task you wanna add: ");
         if (todo.includes(newTask)) {
             alert("This task already exist in the todo list");
@@ -32,15 +32,30 @@ while (true) {
         }
     }
 
-    else if (req == "delete") {
+    else if (req == "delete") {         //  Delete Operation
         let deleteTodo = prompt("Enter the task you wanna delete: ");
         if (todo.includes(deleteTodo)) {
             todo.splice(todo.indexOf(deleteTodo), 1);
-        } else if (deleteTodo.trim().length == 0) {
-            alert("Please enter at least something");
+        }
+        else if (deleteTodo.trim().length == 0) {
+            alert("Please at least enter something");
         }
         else {
             alert("This task doesn't exist in the todo list.");
+        }
+    }
+
+    else if (req == "edit") {           // Update Operation
+        let updateTask = prompt("Enter the task you want to update: ");
+        if (todo.includes(updateTask)) {
+            let modifiedTask = prompt("Update that task: ");
+            while (modifiedTask.trim().length == 0) {
+                modifiedTask = prompt("Please enter non empty tasks: ");
+            }
+            todo.splice(todo.indexOf(updateTask), 1, modifiedTask);
+        }
+        else {
+            alert("Entered task doesn't exist in the todo list");
         }
     }
 
