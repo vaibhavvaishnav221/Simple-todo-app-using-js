@@ -8,11 +8,11 @@ function traversingTodo() {
 
 alert("Welcome to the todo App");
 
-let req = prompt(`Enter your request - "list", "add", "delete", "quit", "edit": `);
+let req = prompt(`Enter your request - "add", "list", "edit", "delete", "quit": `);
 
 while (true) {
 
-    while (req != "list" && req != "add" && req != "delete" && req != "quit" && req != "edit") {
+    while (req != "add" && req != "list" && req != "edit" && req != "delete" && req != "quit") {
         req = prompt("Enter a valid request: ");
     }
 
