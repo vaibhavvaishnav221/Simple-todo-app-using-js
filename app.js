@@ -8,9 +8,13 @@ function traversingTodo() {
 
 alert("Welcome to the todo App");
 
-let req = prompt(`Enter your request - "list", "add", "delete", "read", "edit": `);
+let req = prompt(`Enter your request - "list", "add", "delete", "quit", "edit": `);
 
 while (true) {
+
+    while (req != "list" && req != "add" && req != "delete" && req != "quit" && req != "edit") {
+        req = prompt("Enter a valid request: ");
+    }
 
     if (req == "quit") {                 // To Quit the Application
         alert("You requested to quit the application");
@@ -59,9 +63,8 @@ while (true) {
         }
     }
 
-    else {
-        req = prompt("Enter a valid request: ");
-    }
 
     req = prompt("Enter request again: ");
 }
+
+traversingTodo();
